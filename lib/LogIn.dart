@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Signup.dart';
 
 class LogIn extends StatelessWidget {
   @override
@@ -47,9 +48,14 @@ class LogIn extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(25.0),
-                            child: Container(
-                              color: Colors.grey[200],
-                              child: Icon(Icons.arrow_back),
+                            child: new GestureDetector(
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                color: Colors.grey[200],
+                                child: Icon(Icons.arrow_back),
+                              ),
                             ),
                           )
                         ],
@@ -70,7 +76,7 @@ class LogIn extends StatelessWidget {
                               Text(
                                 'Email Address',
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.grey[600],
                                 ),
                               ),
                               Container(
@@ -87,7 +93,7 @@ class LogIn extends StatelessWidget {
                               ),
                               Text('Password',
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.grey[600],
                                 ),
                               ),
                               Container(
@@ -107,7 +113,7 @@ class LogIn extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[Text('Forgot Password?',
                                   style: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     color: Colors.grey[800],
                                   ),
                                 )],
@@ -185,7 +191,13 @@ class LogIn extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text('Dont have an account? ',style: TextStyle(color: Colors.grey[800],fontSize: 12),),
-                                  Text('Sign Up',style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold,fontSize: 13),)
+                                  new GestureDetector(
+                                    child: Text('Sign Up',style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold,fontSize: 13),
+                                    ),
+                                    onTap: (){
+                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>new SignUp()));
+                                    },
+                                  )
                                 ],
                               ),
                             ],

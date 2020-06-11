@@ -37,18 +37,11 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 30),
-                height: 50,
-                width: 650,
-                child: FlatButton(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  color: Colors.red,
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUp())
-                    );
-                  },
+              new GestureDetector(
+                child: Container(
+                  margin: EdgeInsets.only(top: 30),
+                  height: 50,
+                  width: 650,
                   child: Center(
                     child: Text(
                       'Sign Up',
@@ -56,15 +49,20 @@ class WelcomePage extends StatelessWidget {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [Colors.pink[800], Colors.purple],
+                        tileMode: TileMode.clamp),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Colors.pink[800], Colors.purple],
-                      tileMode: TileMode.clamp),
-                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUp())
+                  );
+                },
               ),
               GestureDetector(
                 child: Container(
