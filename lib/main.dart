@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_login_page/Welcome%20Page.dart';
-import 'API Database.dart';
+import 'Welcome.dart';
 
 void main() => runApp(MyApp());
 

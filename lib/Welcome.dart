@@ -1,7 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:ui_login_page/LogIn.dart';
+import 'LogIn.dart';
 import 'package:ui_login_page/Signup.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -48,7 +46,7 @@ class WelcomePage extends StatelessWidget {
                   color: Colors.red,
                   onPressed: () {
                     Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUp())
+                        MaterialPageRoute(builder: (context) => SignUp())
                     );
                   },
                   child: Center(
