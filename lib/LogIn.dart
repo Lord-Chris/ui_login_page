@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'Signup.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
+  @override
+  _LogInState createState()=>_LogInState();
+}
+class _LogInState extends State<LogIn>{
+  bool _obscureText = true;
+  void _toggle(){
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+}
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -104,7 +114,12 @@ class LogIn extends StatelessWidget {
                                   color: Colors.grey[300]
                                 ),
                                 child: TextField(
+                                  obscureText: _obscureText,
                                   decoration: InputDecoration(
+                                    suffixIcon: IconButton(
+                                      icon: Icon(Icons.remove_red_eye,color: _obscureText ? Colors.purple : Colors.grey[600],),
+                                      onPressed: _toggle,
+                                    ),
                                     border: InputBorder.none,
                                   ),
                                 )

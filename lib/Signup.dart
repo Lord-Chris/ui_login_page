@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'LogIn.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
+  @override
+  _SignUpState createState()=> _SignUpState();
+}
+class _SignUpState extends State<SignUp>{
+  bool _obscureText = true;
+  void _toggle(){
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
   final TextStyle style = new TextStyle(color:Colors.grey[600]);
   final Container field = new Container(
     height: 45,
@@ -12,9 +22,7 @@ class SignUp extends StatelessWidget {
     ),
     child: new TextField(
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none
-        )
+        border: InputBorder.none
       ),
     ),
   );
@@ -84,7 +92,24 @@ class SignUp extends StatelessWidget {
                             new Text('Email Address',style: style,),
                             field,
                             new Text('Password',style: style,),
-                            field,
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.grey[300]
+                              ),
+                              child: TextField(
+                                obscureText: _obscureText,
+                                decoration: InputDecoration(
+                                  suffixIcon: IconButton(
+                                    icon: Icon(Icons.remove_red_eye,color: _obscureText ? Colors.purple : Colors.grey[600],),
+                                    onPressed: _toggle,
+                                  ),
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
                             SizedBox(height: 10,),
                             new Container(
                               height: 50,
