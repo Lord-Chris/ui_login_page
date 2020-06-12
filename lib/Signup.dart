@@ -15,12 +15,15 @@ class _SignUpState extends State<SignUp>{
   final TextStyle style = new TextStyle(color:Colors.grey[600]);
   final Container field = new Container(
     height: 45,
-    padding: EdgeInsets.symmetric(horizontal: 5.0,),
+    padding: EdgeInsets.symmetric(horizontal: 15.0,),
     decoration: new BoxDecoration(
       color: Colors.grey[300],
       borderRadius: new BorderRadius.circular(20),
     ),
     child: new TextField(
+      style: TextStyle(
+        fontWeight: FontWeight.w400
+      ),
       decoration: InputDecoration(
         border: InputBorder.none
       ),
@@ -149,9 +152,14 @@ class _SignUpState extends State<SignUp>{
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.white,
                                   ),
-                                  child: FlatButton(
-                                    child: Text('facebook',
-                                      style: TextStyle(color: Colors.blue[900]),),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image(image: AssetImage('assets/facebook.png'),height: 20,width: 20,),
+                                      SizedBox(width: 10.0,),
+                                      Text('facebook',
+                                        style: TextStyle(color: Colors.blue[800],fontWeight: FontWeight.bold),),
+                                    ],
                                   ),
                                 ),
                                 Container(
@@ -164,9 +172,14 @@ class _SignUpState extends State<SignUp>{
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.white,
                                   ),
-                                  child: FlatButton(
-                                    child: Text('Google',
-                                      style: TextStyle(color: Colors.lightBlue),),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image.asset('assets/Google_icon.png',height: 20.0, width: 20.0,),
+                                      SizedBox(width: 10.0,),
+                                      Text('Google',
+                                        style: TextStyle(color: Colors.lightBlue,fontWeight: FontWeight.bold),),
+                                    ],
                                   ),
                                 ),
                               ],

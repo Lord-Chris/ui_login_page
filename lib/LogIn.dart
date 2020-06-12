@@ -20,9 +20,6 @@ class _LogInState extends State<LogIn>{
           body: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: 20,
-                ),
                 Padding(
                   padding: const EdgeInsets.all(50.0),
                   child: Column(
@@ -57,7 +54,7 @@ class _LogInState extends State<LogIn>{
                       Row(
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.all(25.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 30.0),
                             child: new GestureDetector(
                               onTap: (){
                                 Navigator.pop(context);
@@ -97,6 +94,9 @@ class _LogInState extends State<LogIn>{
                                   color: Colors.grey[300],
                                 ),
                                 child: TextField(
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400
+                                  ),
                                   decoration:
                                       InputDecoration(border: InputBorder.none),
                                 ),
@@ -114,6 +114,9 @@ class _LogInState extends State<LogIn>{
                                   color: Colors.grey[300]
                                 ),
                                 child: TextField(
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400
+                                  ),
                                   obscureText: _obscureText,
                                   decoration: InputDecoration(
                                     suffixIcon: IconButton(
@@ -169,34 +172,48 @@ class _LogInState extends State<LogIn>{
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    Container(
-                                      height: 50,
-                                      width: 150,
-                                      decoration: BoxDecoration(
-                                        boxShadow: [BoxShadow(
-                                          color: Colors.grey[400]
-                                        )],
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: Colors.white,
-                                      ),
-                                      child: FlatButton(
-                                        child: Text('facebook',
-                                        style: TextStyle(color: Colors.blue[900]),),
+                                    new GestureDetector(
+                                      child: Container(
+                                        height: 50,
+                                        width: 150,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [BoxShadow(
+                                            color: Colors.grey[400]
+                                          )],
+                                          borderRadius: BorderRadius.circular(20),
+                                          color: Colors.white,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Image(image: AssetImage('assets/facebook.png'),height: 20,width: 20,),
+                                            SizedBox(width: 10.0,),
+                                            Text('facebook',
+                                              style: TextStyle(color: Colors.blue[800],fontWeight: FontWeight.bold),),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                    Container(
-                                      height: 50,
-                                      width: 150,
-                                      decoration: BoxDecoration(
-                                        boxShadow: [BoxShadow(
-                                            color: Colors.grey[400]
-                                        )],
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: Colors.white,
-                                      ),
-                                      child: FlatButton(
-                                        child: Text('Google',
-                                        style: TextStyle(color: Colors.lightBlue),),
+                                    new GestureDetector(
+                                      child: Container(
+                                        height: 50,
+                                        width: 150,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [BoxShadow(
+                                              color: Colors.grey[400]
+                                          )],
+                                          borderRadius: BorderRadius.circular(20),
+                                          color: Colors.white,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Image.asset('assets/Google_icon.png',height: 20.0, width: 20.0,),
+                                            SizedBox(width: 10.0,),
+                                            Text('Google',
+                                              style: TextStyle(color: Colors.lightBlue,fontWeight: FontWeight.bold),),
+                                          ],
+                                        ),
                                       ),
                                     )
                                   ],
